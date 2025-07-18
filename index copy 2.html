@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELARION Skies - Premium Private Jet Charters</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --luxury-cream: #f8f5f0;
+            --luxury-gold: #d4af37;
+            --luxury-gold-light: #f4d03f;
+            --luxury-navy: #0a1a2a;
+            --luxury-sand: #e6dfd3;
+            --luxury-charcoal: #2a2a2a;
+            --luxury-text: #333333;
+            --luxury-text-light: #5a5a5a;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--luxury-cream);
+            color: var(--luxury-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--luxury-navy); font-weight: 700; }
+        .btn {
+            background: linear-gradient(135deg, var(--luxury-gold) 0%, var(--luxury-gold-light) 100%);
+            color: #000; border: none; padding: 15px 40px; border-radius: 50px; font-weight: 600;
+            font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); text-decoration: none; display: inline-block;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5); }
+        .card {
+            background: white; border-radius: 15px; padding: 30px; transition: all 0.4s ease;
+            position: relative; overflow: hidden; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); }
+        .section-title { text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .section-title .sub-title { color: var(--luxury-gold); font-size: 1.2rem; margin-bottom: 15px; display: block; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .section-title h2 { font-size: 2.8rem; margin-bottom: 20px; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: var(--luxury-gold); }
+        .section-title p { color: var(--luxury-text-light); font-size: 1.1rem; margin-top: 30px; }
+        header {
+            background-color: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; top: 0; left: 0;
+            z-index: 1000; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); padding: 20px 0;
+        }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--luxury-navy); text-decoration: none; }
+        .logo span { color: var(--luxury-gold); }
+        .nav-links { display: flex; list-style: none; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { color: var(--luxury-navy); text-decoration: none; font-weight: 500; font-size: 1rem; position: relative; padding: 5px 0; transition: all 0.3s ease; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: var(--luxury-gold); transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--luxury-gold); }
+        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+        .hero {
+            background: linear-gradient(rgba(10, 26, 42, 0.85), rgba(10, 26, 42, 0.9)), url('https://i.imgur.com/6d3Y4Ff.jpg');
+            background-size: cover; background-position: center; color: white; padding: 180px 0 100px; text-align: center; position: relative;
+        }
+        .hero-content h1 { font-size: 4rem; margin-bottom: 20px; color: white; background: linear-gradient(135deg, #ffffff 0%, var(--luxury-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: none; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; color: rgba(255, 255, 255, 0.9); }
+        .about { padding: 100px 0; }
+        .about-content { display: flex; align-items: center; gap: 50px; }
+        .about-image { flex: 1; position: relative; }
+        .about-image .main-img { width: 100%; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .about-image .sub-img { position: absolute; bottom: -40px; right: -40px; width: 50%; border-radius: 10px; border: 5px solid var(--luxury-cream); }
+        .experience-badge { position: absolute; top: 20px; left: -30px; background: var(--luxury-gold); color: #000; padding: 20px; border-radius: 10px; font-weight: 700; text-align: center; }
+        .about-text { flex: 1; }
+        .features-list { list-style: none; padding: 0; margin: 20px 0; }
+        .features-list li { display: flex; align-items: center; margin-bottom: 10px; }
+        .features-list i { color: var(--luxury-gold); margin-right: 10px; }
+        .call-info { display: flex; align-items: center; margin-top: 30px; }
+        .call-info .icon { font-size: 2rem; color: var(--luxury-gold); margin-right: 15px; }
+        .partners { padding: 60px 0; background-color: var(--luxury-sand); }
+        .partners-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .partner-logo { height: 35px; filter: grayscale(100%) contrast(0.5); opacity: 0.8; transition: all 0.3s ease; }
+        .partner-logo:hover { filter: none; opacity: 1; }
+        .services-overview { padding: 100px 0; background-color: var(--luxury-cream); }
+        .features-section { padding: 100px 0; background-color: var(--luxury-sand); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: white; border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .feature-card .icon { margin-bottom: 20px; }
+        .feature-card .icon img { height: 60px; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .feature-card a { color: var(--luxury-gold); text-decoration: none; font-weight: 600; }
+        .performance-section { padding: 100px 0; background-color: var(--luxury-cream); }
+        .performance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .performance-card { background: white; border-radius: 10px; padding: 30px; display: flex; align-items: center; gap: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .performance-card .icon { font-size: 2rem; color: var(--luxury-gold); }
+        .request-quote-section { padding: 100px 0; background: linear-gradient(rgba(10, 26, 42, 0.9), rgba(10, 26, 42, 0.9)), url('https://i.imgur.com/Of5a2w7.jpg') center/cover fixed; color: white; text-align: center; }
+        .request-quote-section h2 { color: white; }
+        .funfacts { padding: 100px 0; background-color: var(--luxury-sand); }
+        .funfacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .funfact-item h3 { font-size: 3rem; color: var(--luxury-gold); }
+        .how-it-works { padding: 100px 0; }
+        .how-it-works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .how-it-works-card { text-align: center; padding: 30px; }
+        .how-it-works-card .icon { font-size: 3rem; color: var(--luxury-gold); margin-bottom: 20px; }
+        .booking { padding: 100px 0; background-color: var(--luxury-sand); }
+        .booking-container { display: flex; gap: 50px; align-items: center; }
+        .booking-image img { width: 100%; border-radius: 10px; }
+        .booking-form { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 1rem; }
+        .destinations { padding: 100px 0; }
+        .destinations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .destination-card { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .destination-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .destination-card:hover img { transform: scale(1.1); }
+        .destination-card .overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(10, 26, 42, 0.9), transparent); padding: 30px 20px; color: white; }
+        .destination-card h3 { color: white; }
+        .pricing { padding: 100px 0; background-color: var(--luxury-sand); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .pricing-card { border: 1px solid var(--luxury-sand); text-align: center; }
+        .pricing-card .header { padding: 30px; background-color: var(--luxury-cream); }
+        .pricing-card ul { list-style: none; padding: 0; margin: 20px 0; }
+        .pricing-card li { margin-bottom: 10px; }
+        .faq { padding: 100px 0; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: white; margin-bottom: 15px; border-radius: 10px; }
+        .faq-question { width: 100%; text-align: left; padding: 20px; font-size: 1.2rem; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { padding: 0 20px 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+        .testimonials { padding: 100px 0; background-color: var(--luxury-sand); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card .quote { font-size: 4rem; position: absolute; top: 10px; left: 20px; color: var(--luxury-gold); opacity: 0.2; }
+        .cta { padding: 100px 0; background: linear-gradient(rgba(10, 26, 42, 0.9), rgba(10, 26, 42, 0.9)), url('https://i.imgur.com/I3c2g5F.jpg') center/cover; color: white; text-align: center; }
+        .cta h2 { color: white; }
+        footer { background-color: var(--luxury-navy); color: white; padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 60px; }
+        .footer-col h3 { color: white; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .social-links a { color: white; text-decoration: none; margin-right: 15px; }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index-copy.html" class="logo">VELARION <span>Skies</span></a>
+                <ul class="nav-links">
+                    <li><a href="index-copy.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="private-flights.html">Book Flight</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>A Better Way to Fly Private</h1>
+                    <p>VELARION Skies proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services.</p>
+                    <a href="private-flights.html" class="btn">Request a Flight</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="assets/images/about/about4.jpg" alt="Luxury Jet Interior" class="main-img">
+                        <img src="assets/images/about/about5.jpg" alt="Jet Exterior Detail" class="sub-img">
+                        <div class="experience-badge">
+                            <strong>25+</strong> <br> Years Experience
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="section-title" style="text-align: left; margin: 0 0 20px 0;">Our Private Jet Charters Save Your Time and Give You Comfort</h2>
+                        <p>Non augue egestas commodo velit eget vestibulum tellus. Curabitur vulpu justo elit at elementum orci pulvinar vel. Pellentesq habitant morbi tristique.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> There are many variations of passage of lorem.</li>
+                            <li><i class="fas fa-check-circle"></i> Available but the majority alteration.</li>
+                        </ul>
+                        <div class="call-info">
+                            <div class="icon"><i class="fas fa-phone-volume"></i></div>
+                            <div>
+                                <span>CALL ANYTIME</span><br>
+                                <a href="tel:+19285551234" style="color: var(--luxury-navy); text-decoration: none; font-weight: bold;">+1 (928) 555-1234</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <div class="section-title">
+                    <p>We collaborate with 200+ leading Private Jet Charters and companies</p>
+                </div>
+                <div class="partners-grid">
+                    <img src="assets/images/partners/partner5.svg" alt="Partner Logo 1" class="partner-logo">
+                    <img src="assets/images/partners/partner6.svg" alt="Partner Logo 2" class="partner-logo">
+                    <img src="assets/images/partners/partner7.svg" alt="Partner Logo 3" class="partner-logo">
+                    <img src="assets/images/partners/partner8.svg" alt="Partner Logo 4" class="partner-logo">
+                    <img src="assets/images/partners/partner9.svg" alt="Partner Logo 5" class="partner-logo">
+                </div>
+            </div>
+        </section>
+
+        <section id="services-overview" class="services-overview">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Our Services</span>
+                    <h2>Premium Private Jet Solutions</h2>
+                    <p>A brief overview of our primary services. For a comprehensive list, please view our dedicated services page.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-plane" style="font-size: 48px; color: var(--luxury-gold);"></i></div>
+                        <h3>Private Jet Charter</h3>
+                        <p>On-demand flights tailored to your schedule for business or leisure.</p>
+                        <a href="services.html#private-jet" style="color: var(--luxury-gold); text-decoration: none; font-weight: 600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-helicopter" style="font-size: 48px; color: var(--luxury-gold);"></i></div>
+                        <h3>Helicopter Services</h3>
+                        <p>Swift, direct access to city centers and remote locations.</p>
+                        <a href="services.html#private-helicopter" style="color: var(--luxury-gold); text-decoration: none; font-weight: 600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-heartbeat" style="font-size: 48px; color: var(--luxury-gold);"></i></div>
+                        <h3>Air Ambulance</h3>
+                        <p>Specialized medical transport with ICU-equipped jets and medical teams.</p>
+                        <a href="services.html#air-ambulance" style="color: var(--luxury-gold); text-decoration: none; font-weight: 600;">Urgent Medical Transport <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="services.html" class="btn">Discover All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">OUR FEATURES</span>
+                    <h2>Private Jet for Business and Leisure Purposes</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon"><img src="assets/images/features/features-1.svg" alt="Business Charter Icon"></div>
+                        <h3>Business Charter</h3>
+                        <a href="services.html">Discover More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><img src="assets/images/features/features-2.svg" alt="Leisure Charter Icon"></div>
+                        <h3>Leisure Charter</h3>
+                        <a href="services.html">Discover More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><img src="assets/images/features/features-3.svg" alt="Jet Rental Icon"></div>
+                        <h3>Jet Rental</h3>
+                        <a href="services.html">Discover More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="performance-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Private Jet Comfort</span>
+                    <h2>Performance and Specifications</h2>
+                </div>
+                <div class="performance-grid">
+                    <div class="performance-card">
+                        <div class="icon"><i class="fas fa-couch"></i></div>
+                        <div>
+                            <h4>Luxury and Comfort</h4>
+                            <p>In the realm of contemporary living, the intertwined of luxury & comfort create a tapestry of indulge...</p>
+                        </div>
+                    </div>
+                    <div class="performance-card">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4>Safety and Confidentiality</h4>
+                            <p>In the realm of contemporary living, the intertwined of luxury & comfort create a tapestry of indulge...</p>
+                        </div>
+                    </div>
+                    <div class="performance-card">
+                        <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div>
+                            <h4>Personal Schedule</h4>
+                            <p>In the realm of contemporary living, the intertwined of luxury & comfort create a tapestry of indulge...</p>
+                        </div>
+                    </div>
+                    <div class="performance-card">
+                        <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <div>
+                            <h4>Many Airports</h4>
+                            <p>In the realm of contemporary living, the intertwined of luxury & comfort create a tapestry of indulge...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="request-quote-section">
+            <div class="container">
+                <h2>We Fly You To Over 20,000 Destinations World Wide</h2>
+                <p>Avelo Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional and personalised service.</p>
+                <a href="private-flights.html" class="btn">Request a Quote</a>
+            </div>
+        </section>
+
+        <section class="funfacts">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Why VELARION Skies?</span>
+                    <h2>Excellence by the Numbers</h2>
+                </div>
+                <div class="funfacts-grid">
+                    <div class="funfact-item"><h3>15+</h3><p>Years of Operational Excellence</p></div>
+                    <div class="funfact-item"><h3>100+</h3><p>Certified Global Operators</p></div>
+                    <div class="funfact-item"><h3>500+</h3><p>Gourmet In-Flight Menus</p></div>
+                    <div class="funfact-item"><h3>10,000+</h3><p>Flight Hours Coordinated</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">How It Works</span>
+                    <h2>Four Steps to Your Effortless Journey</h2>
+                </div>
+                <div class="how-it-works-grid">
+                    <div class="how-it-works-card card"><div class="icon"><i class="fas fa-question-circle"></i></div><h3>1. Inquire</h3><p>Tell us where you’re going, when you need to leave, and how you like to fly.</p></div>
+                    <div class="how-it-works-card card"><div class="icon"><i class="fas fa-sliders-h"></i></div><h3>2. Tailor</h3><p>We match your mission with the perfect aircraft, crew, and luxury add-ons.</p></div>
+                    <div class="how-it-works-card card"><div class="icon"><i class="fas fa-check-circle"></i></div><h3>3. Confirm</h3><p>Approve your custom quote. We handle the rest — discreetly and precisely.</p></div>
+                    <div class="how-it-works-card card"><div class="icon"><i class="fas fa-plane-departure"></i></div><h3>4. Depart</h3><p>Step into your jet. From arrival to landing, you’re in expert hands.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="booking">
+            <div class="container">
+                <div class="booking-container">
+                    <div class="booking-image"><img src="assets/images/flight-booking/flight-booking-1.png" alt="Booking Assistant"></div>
+                    <div class="booking-form">
+                        <h3>Online Request for Private Flight</h3>
+                        <form>
+                            <div class="form-group"><label>From:</label><input type="text" placeholder="City or Airport Name"></div>
+                            <div class="form-group"><label>To:</label><input type="text" placeholder="City or Airport Name"></div>
+                            <div class="form-group"><label>Depart Date:</label><input type="date"></div>
+                            <div class="form-group"><label>Return Date:</label><input type="date"></div>
+                            <div class="form-group"><label>Passengers:</label><select><option>1</option><option>2</option></select></div>
+                            <div class="form-group"><label>Baggage:</label><select><option>VIP</option><option>Standard</option></select></div>
+                            <button type="submit" class="btn" style="width: 100%;">Request Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinations" class="destinations">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">POPULAR DESTINATIONS</span>
+                    <h2>Checkout the Popular Jet Charter Destinations</h2>
+                </div>
+                <div class="destinations-grid">
+                    <a href="london-moscow.html" class="destination-card"><img src="assets/images/checkout/checkout1.jpg" alt="London to Moscow"><div class="overlay"><h3>London – Moscow</h3><p>Departure: 17:50 Arrival: 20:42</p></div></a>
+                    <a href="hamburg-stockholm.html" class="destination-card"><img src="assets/images/checkout/checkout2.jpg" alt="Hamburg to Stockholm"><div class="overlay"><h3>Hamburg – Stockholm</h3><p>Departure: 17:50 Arrival: 20:42</p></div></a>
+                    <a href="milan-stockholm.html" class="destination-card"><img src="assets/images/checkout/checkout3.jpg" alt="Milan to Stockholm"><div class="overlay"><h3>Milan – Stockholm</h3><p>Departure: 17:50 Arrival: 20:42</p></div></a>
+                    <a href="new-york-tokyo.html" class="destination-card"><img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070" alt="New York to Tokyo"><div class="overlay"><h3>New York – Tokyo</h3><p>Connecting global hubs with unparalleled speed.</p></div></a>
+                    <a href="dubai-milan.html" class="destination-card"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1966" alt="Dubai to Milan"><div class="overlay"><h3>Dubai – Milan</h3><p>Travel between the centers of luxury and fashion.</p></div></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">PRIVATE FLIGHTS</span>
+                    <h2>Select the Charters According to Your Need</h2>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card card">
+                        <div class="header"><h3>New York to Milan</h3></div>
+                        <div class="content">
+                            <p>Non augue egestas commodo velit eget vest justo elit at orci pulvinar vel.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Flight date: <strong>18.03.2024</strong></li>
+                                <li><i class="fas fa-check"></i> Sits: <strong>9</strong></li>
+                                <li><i class="fas fa-check"></i> Price: <strong>$2786</strong></li>
+                            </ul>
+                            <a href="private-flights.html" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="pricing-card card">
+                        <div class="header"><h3>Berlin to Prague</h3></div>
+                        <div class="content">
+                            <p>Non augue egestas commodo velit eget vest justo elit at orci pulvinar vel.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Flight date: <strong>18.03.2024</strong></li>
+                                <li><i class="fas fa-check"></i> Sits: <strong>9</strong></li>
+                                <li><i class="fas fa-check"></i> Price: <strong>$2786</strong></li>
+                            </ul>
+                            <a href="private-flights.html" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="pricing-card card">
+                        <div class="header"><h3>London to Paris</h3></div>
+                        <div class="content">
+                            <p>Non augue egestas commodo velit eget vest justo elit at orci pulvinar vel.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Flight date: <strong>18.03.2024</strong></li>
+                                <li><i class="fas fa-check"></i> Sits: <strong>9</strong></li>
+                                <li><i class="fas fa-check"></i> Price: <strong>$2786</strong></li>
+                            </ul>
+                            <a href="private-flights.html" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Information</span>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question"><span>What Aircraft are used for Charter Flights?</span> <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>Non augue egestas commodo velit eget vestibulum tellus. Curabitur justo elit at elementum orci pulvinar vel.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>How many people do they hold?</span> <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>Non augue egestas commodo velit eget vestibulum tellus. Curabitur justo elit at elementum orci pulvinar vel.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question"><span>Can I use more than one of your Aircrafts at a time?</span> <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>Non augue egestas commodo velit eget vestibulum tellus. Curabitur justo elit at elementum orci pulvinar vel.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">WHAT OUR CUSTOMERS SAY</span>
+                    <h2>What People Say About Our Services?</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card card">
+                        <div class="quote">“</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ullam facilisis at turpis eu faucibus. In dignissim enim eu ornare aliqu metus ex tempor neque sit amet efficitur turpis.</p>
+                        <h4>Randall Schwartz</h4>
+                        <span>London – Moscow</span>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="quote">“</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ullam facilisis at turpis eu faucibus. In dignissim enim eu ornare aliqu metus ex tempor neque sit amet efficitur turpis.</p>
+                        <h4>Bertha Garrett</h4>
+                        <span>New York – Paris</span>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="quote">“</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ullam facilisis at turpis eu faucibus. In dignissim enim eu ornare aliqu metus ex tempor neque sit amet efficitur turpis.</p>
+                        <h4>Myrtle Gonzalez</h4>
+                        <span>Dubai – London</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Do you want to get an estimation?</h2>
+                <p>Use our hotline for a quick response, 24 hours a day.</p>
+                <a href="tel:+19285551234" class="btn"><i class="fas fa-phone"></i> +1 (928) 555-1234</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index-copy.html" class="logo">VELARION <span>Skies</span></a>
+                    <p>Non augue egestas commodo velit eget vestibulu mtellus. Curabitur vulpujusto elit at elementum orci pulvinar vel.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="private-flights.html">Book Flight</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms-conditions.html">Terms of Use</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ's</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+19285551234">+1 (928) 555-1234</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@velarionskies.com">info@velarionskies.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 888 Luxury Avenue, Beverly Hills, CA 90210</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 VELARION Skies. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+        // Basic FAQ toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
