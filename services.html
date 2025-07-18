@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Avelo - Private Jet Charters HTML Template</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+        <!-- Link of CSS files -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/regular/style.css">
+        <link rel="stylesheet" href="assets/fonts/fill/style.css">
+        <link rel="stylesheet" href="assets/fonts/bold/style.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+        <link rel="stylesheet" href="assets/css/scrollCue.css" >
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <style>
+            .single-service-box {
+                background-color: #f9f9f9;
+                padding: 60px;
+                margin-bottom: 100px;
+                border-radius: 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+                text-align: center;
+            }
+            .single-service-box img {
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 50%;
+                display: block;
+                margin: 0 auto 40px auto;
+                border: 5px solid #d4af37;
+            }
+            .single-service-box h2 {
+                margin-bottom: 20px;
+                color: var(--blackColor); /* Using variable from style.css */
+                font-size: 2.5em;
+                font-family: var(--headingFontFamily); /* Using variable from style.css */
+            }
+            .single-service-box p {
+                margin-bottom: 40px;
+                line-height: 1.8;
+                color: var(--bodyColor); /* Using variable from style.css */
+                font-family: var(--fontFamily); /* Using variable from style.css */
+            }
+            .single-service-box .default-btn {
+                background-color: var(--mainColor); /* Using variable from style.css */
+                color: var(--whiteColor); /* Using variable from style.css */
+                padding: 18px 35px;
+                text-decoration: none;
+                border-radius: 8px;
+                display: inline-block;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
+            }
+            .single-service-box .default-btn:hover {
+                background-color: var(--optionalColor); /* Using variable from style.css */
+            }
+            .single-service-box .default-btn i {
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Preloader -->
+        <div class="preloader-area position-fixed start-0 top-0 end-0 bottom-0 text-center">
+            <div class="preloader">
+                <img src="assets/images/preloader.png" alt="preloader">
+                <div class="waviy fw-bold">
+                    <span class="position-relative d-inline-block">A</span>
+                    <span class="position-relative d-inline-block">V</span>
+                    <span class="position-relative d-inline-block">E</span>
+                    <span class="position-relative d-inline-block">L</span>
+                    <span class="position-relative d-inline-block">O</span>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+        <!-- Start Navbar Area -->
+        <div class="navbar-area page-title">
+            <div class="nofa-responsive-nav">
+                <div class="container">
+                    <div class="nofa-responsive-menu">
+                        <div class="logo">
+                            <a href="index.html" class="d-inline-block">
+                                <img src="assets/images/logo.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nofa-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/images/logo.png" alt="logo">
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link active">
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link">
+                                        Services
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="services.html#private-jet" class="nav-link">
+                                                private jet
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="services.html#private-helicopter" class="nav-link">
+                                                private helicopter
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="services.html#air-ambulance" class="nav-link">
+                                                air ambulance
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="services.html#catering" class="nav-link">
+                                                catering
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="services.html#ground-transportation" class="nav-link">
+                                                ground transportation
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link">
+                                        Pages
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li class="nav-item">
+                                            <a href="faq.html" class="nav-link">
+                                                FAQ
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="testimonial.html" class="nav-link">
+                                                Testimonial
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="private-flights.html" class="nav-link">
+                                                Book Your Flight
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="privacy-policy.html" class="nav-link">
+                                                Privacy Policy
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="terms-conditions.html" class="nav-link">
+                                                Terms & Conditions
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="not-found.html" class="nav-link">
+                                                404 Error Page
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="others-option position-relative d-flex align-items-center">
+                                <div class="option-item">
+                                    <a href="contact.html" class="user-btn d-inline-block lh-1">
+                                        <i class="ph-bold ph-user"></i>
+                                    </a>
+                                </div>
+                                <div class="option-item d-none">
+                                    <a href="#" class="cart-btn position-relative d-inline-block lh-1">
+                                        <i class="ph-bold ph-shopping-cart-simple"></i>
+                                        <span>
+                                            0
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="option-item">
+                                    <div class="search-btn d-inline-block lh-1">
+                                        <i class="ph-bold ph-magnifying-glass"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar Area -->
+
+        <!-- Search Overlay -->
+        <div class="search-overlay position-fixed start-0 end-0 top-0 bottom-0 overflow-hidden">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="search-overlay-close">
+                        <i class="ph-bold ph-x"></i>
+                    </div>
+                    <div class="search-overlay-form">
+                        <form>
+                            <input type="text" class="input-search bg-transparent p-0 d-block w-100" placeholder="Enter your keywords...">
+                            <button type="submit" class="d-inline-block bg-transparent p-0 border-0">
+                                <i class="ph-bold ph-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Search Overlay -->
+
+        <!-- Start Page Title Area -->
+        <div class="page-title-area position-relative z-1">
+            <div class="container">
+                <div class="page-title-content text-center">
+                    <h1>Services</h1>
+                    <h6 class="mx-auto">Welcome to Our World, Where Innovation Meets Purpose, and Possibilities Unfold.</h6>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Title Area -->
+    
+        <!-- Start Services Area -->
+        <div class="services-area pt-100 pb-75">
+            <div class="container">
+                <div id="private-jet" class="single-service-box">
+                    <img src="assets/images/services/services2.png" alt="Private Jet Service">
+                    <h2>Private Jet</h2>
+                    <p>Experience unparalleled luxury and efficiency with our private jet charter services. Whether for business or leisure, we offer a fleet of modern aircraft, personalized itineraries, and dedicated crew to ensure a seamless and comfortable journey. Enjoy privacy, flexibility, and direct access to a wider range of airports, saving you valuable time.</p>
+                    <a href="private-jet-details.html" class="default-btn">
+                        Read More
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div id="private-helicopter" class="single-service-box">
+                    <img src="assets/images/services/services3.png" alt="Private Helicopter Service">
+                    <h2>Private Helicopter</h2>
+                    <p>Discover the ultimate in convenience and speed with our private helicopter services. Ideal for short-haul flights, urban transfers, or accessing remote locations, our helicopters provide a swift and stylish solution. Enjoy breathtaking aerial views and bypass traffic, arriving at your destination refreshed and on schedule.</p>
+                    <a href="private-helicopter-details.html" class="default-btn">
+                        Read More
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div id="air-ambulance" class="single-service-box">
+                    <img src="assets/images/services/services4.png" alt="Air Ambulance Service">
+                    <h2>Air Ambulance</h2>
+                    <p>In critical situations, our air ambulance service provides rapid and safe medical transportation. Equipped with state-of-the-art medical equipment and staffed by highly trained medical professionals, we ensure patients receive continuous care during transit. Available 24/7 for urgent medical evacuations and transfers.</p>
+                    <a href="air-ambulance-details.html" class="default-btn">
+                        Read More
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div id="catering" class="single-service-box">
+                    <img src="assets/images/services/Gemini_Generated_Image_sec3 catering.png" alt="Catering Service">
+                    <h2>Catering</h2>
+                    <p>Elevate your travel experience with our bespoke catering services. From gourmet meals to light snacks and refreshing beverages, we offer a wide selection of culinary delights tailored to your preferences. Our catering partners ensure the highest quality ingredients and impeccable presentation, making your journey even more enjoyable.</p>
+                    <a href="catering-details.html" class="default-btn">
+                        Read More
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                <div id="ground-transportation" class="single-service-box" style="margin-bottom: 0;">
+                    <img src="assets/images/services/ground transportation.png" alt="Ground Transportation Service">
+                    <h2>Ground Transportation</h2>
+                    <p>Complete your seamless travel experience with our premium ground transportation services. We arrange comfortable and reliable transfers to and from airports, hotels, or any destination, ensuring you arrive punctually and stress-free. Choose from a range of luxury vehicles with professional chauffeurs for a smooth transition.</p>
+                    <a href="ground-transportation-details.html" class="default-btn">
+                        Read More
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Services Area -->
+
+        
+
+        <!-- Start Footer Area -->
+        <footer class="footer-area position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <a href="#" class="logo d-inline-block">
+                                <img src="assets/images/white-logo.png" alt="white-logo">
+                            </a>
+                            <p>
+                                Non augue egestas commodo velit eget vestibulu mtellus. Curabitur vulpujusto elit at elementum orci pulvinar vel. Pellentesq habitant morbi tristique. Pellentesque habitant morbi tristique.
+                            </p>
+                            <div class="socials-link">
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="ph-fill ph-facebook-logo"></i>
+                                </a>
+                                <a href="https://twitter.com/" target="_blank">
+                                    <i class="ph-fill ph-twitter-logo"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="ph-fill ph-instagram-logo"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class="ph-fill ph-linkedin-logo"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h3>
+                                Explore
+                            </h3>
+                            <ul class="custom-links list-unstyled ps-0 mb-0">
+                                <li>
+                                    <a href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="destination.html">
+                                        Destinations
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="private-flights.html">
+                                        Book Flight
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h3>
+                                Links
+                            </h3>
+                            <ul class="custom-links list-unstyled ps-0 mb-0">
+                                <li>
+                                    <a href="terms-conditions.html">
+                                        Terms of Use
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="faq.html">
+                                        FAQ's
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h3>
+                                Contact Us
+                            </h3>
+                            <ul class="footer-contact-info list-unstyled ps-0 mb-0">
+                                <li class="position-relative">
+                                    <a href="tel:+9288006780">
+                                        <i class="ph-bold ph-phone-call"></i>
+                                        +92 ( 8800 ) - 6780
+                                    </a>
+                                </li>
+                                <li class="position-relative">
+                                    <i class="ph-bold ph-envelope-simple"></i>
+                                    <a href="mailto:needhelp@company.com">
+                                        needhelp@company.com
+                                    </a>
+                                </li>
+                                <li class="position-relative">
+                                    <i class="ph-bold ph-map-pin"></i>
+                                    <span class="d-block">
+                                        30 Broklyn Golden Street, New York
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-sm-5 col-md-6">
+                            <p class="text-white">
+                                © Copyright 2024 by <a href="index.html">Avelo</a>
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-sm-7 col-md-6">
+                            <ul class="ps-0 mb-0 list-unstyled">
+                                <li class="d-inline-block">
+                                    <a href="privacy-policy.html">
+                                        Privacy & Policy
+                                    </a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a href="terms-conditions.html">
+                                        Terms and Conditions
+                                    </a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+
+        <!-- Go Top -->
+        <div class="go-top position-fixed text-center">
+            <i class="ph-bold ph-caret-up"></i>
+        </div>
+
+        <!-- Link of JS files -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/meanmenu.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/scrollCue.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
